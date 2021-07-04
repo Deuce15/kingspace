@@ -41,3 +41,36 @@ def single(request):
 
 def team(request):
 	return render(request, 'team.html', {})
+
+def appointment(request):
+	if request.method == "POST":
+		your_name = request.POST['your-name']
+		your_phone = request.POST['your-phone']
+		your_email = request.POST['your-email']
+		your_address = request.POST['your-address']
+		your_schedule = request.POST['your-schedule']
+		your_date = request.POST['your-date']
+		your_message = request.POST['your-message']
+
+		# send an email
+		'''
+		
+		send_mail(
+			message_name, # subject
+			message, # message
+			message_email, # from email
+			['i.nyamu5@gmail.com'], # to email
+
+			)
+		'''
+		return render(request, 'appointment.html', {
+			'your_name':your_name,
+			'your_phone':your_phone,
+			'your_email':your_email,
+			'your_address':your_address,
+			'your_schedule':your_schedule,
+			'your_date':your_date,
+			'your_message':your_message,
+			})
+	else:	
+		return render(request, 'home.html', {})

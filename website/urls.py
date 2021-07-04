@@ -10,4 +10,5 @@ urlpatterns = [
     path('portfolio.html', views.portfolio, name="portfolio"),
     path('single.html', views.single, name="single"),
     path('team.html', views.team, name="team"),
+    path('appointment.html', views.appointment, name="appointment"),
 ]
